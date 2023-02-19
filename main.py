@@ -35,12 +35,10 @@ def find_mismatch(text):
 
 def main():
     text = input()
-if "I" in text:
-    mismatch = find_mismatch(text)
-    if mismatch == "Success":
+    if "I" in text:
+        text = input()
+        mismatch = find_mismatch(text)
         print(mismatch)
-    else:
-        print(mismatch + 1)
 
 if __name__ == "__main__":
     main()
