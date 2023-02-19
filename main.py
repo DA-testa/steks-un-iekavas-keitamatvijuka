@@ -1,5 +1,5 @@
 # python3
-# Keita Matvijuka 221RDB506 13. gr.
+# Keita Matvijuka 221RDB506 1. kurss 13. gr.
 
 from collections import namedtuple
 
