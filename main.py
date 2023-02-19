@@ -1,4 +1,5 @@
 # python3
+# Keita Matvijuka 221RDB506 1. kurss 13. gr.
 
 from collections import namedtuple
 
@@ -10,22 +11,38 @@ def are_matching(left, right):
 
 
 def find_mismatch(text):
-    opening_brackets_stack = []
-    for i, next in enumerate(text):
-        if next in "([{":
-            # Process opening bracket, write your code here
-            pass
-
-        if next in ")]}":
-            # Process closing bracket, write your code here
-            pass
-
+    stack = []
+    for i, char in enumerate(text):
+        if char in "([{":
+            
+            stack.append((char, i))
+        elif char in ")]}":
+            if not stack:
+             
+                return i
+            else:
+                top_char, top_pos = stack.pop()
+                
+                if (top_char == "(" and char != ")") or \
+                    (top_char == "[" and char != "]") or \
+                    (top_char == "{" and char != "}"):
+                    return i
+    if stack:
+ 
+        return stack[0][1]
+    else:
+      
+        return "Success"
 
 def main():
     text = input()
-    mismatch = find_mismatch(text)
-    # Printing answer, write your code here
-
+    if "I" in text:
+        text = input()
+        mismatch = find_mismatch(text)
+        if mismatch == "Success":
+            print(mismatch)
+        else:
+            print(mismatch + 1) 
 
 if __name__ == "__main__":
     main()
