@@ -1,4 +1,5 @@
 # python3
+# Keita Matvijuka 221RDB506 13. gr.
 
 from collections import namedtuple
 
